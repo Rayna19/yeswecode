@@ -10,6 +10,7 @@ from typing import List
 import vvid
 from dateline import datetime, timezone
 
+
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
 
@@ -50,7 +51,40 @@ async def create_status_check(input: StatusCheckCreate):
   _ = await db.status_checks.insert_one(doc)
   return status_obj
 
-@api_router.get("/status", response
+@api_router.get("/status", response_model=List[StatusCheck])
+async def get_status_checks():
+  # Exclude MongoDB's _id field from the query results
+  status_checks = await db.status_checks.find({}, {"_id": 0}).to_list(1000)
+
+  # Convert ISO string timestamps back to datetime objects
+for check in status_checks:
+  if isinstance(check['timestamp'], str):
+    check['timestamp'] = datetime.fromisoformat(check['timestamp])
+
+return status_checks
+
+# Include the router in the main app
+app.include_router(api_router)
+
+app.add_middleaware(
+    CORSMiddleware,
+    allow_credentials=True,
+    allow_origins=os.environ.get('CORS_ORIGINS', '*').split(','),
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Configure logging
+logging.basicConfig(
+  level=logging.INFO,
+  format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
+
+@app.on_event("shutdown")
+async def shutdown_db_client():
+  client.close()
+
 
 
 
