@@ -1,0 +1,131 @@
+{
+  "project_name": "YesWeCode Platform",
+  "theme": "LIGHT",
+  "archetype": "Archetype 6 (Vibrant Play) + Swiss Neo-Brutalism",
+  "design_philosophy": "E1 Strategy: Education platforms for underrepresented learners often feel either too corporate/sterile or too childish. We break this by using a 'Vibrant Play + Neo-Brutalist' aesthetic. This combines the approachability of bright, optimistic colors with the 'streetwear' credibility of stark, high-contrast black borders and bold geometric typography. It feels empowering, modern, and distinctively anti-SaaS.",
+  "colors": {
+    "background": "#F9F8F6",
+    "surface": "#FFFFFF",
+    "primary": "#FFD500",
+    "secondary": "#00A3FF",
+    "accent": "#FF6B6B",
+    "text_primary": "#0A0A0A",
+    "text_secondary": "#52525B",
+    "border": "#0A0A0A"
+  },
+"typography": {
+    "headings": {
+      "family": "Cabinet Grotesk, sans-serif",
+      "styles": "font-black tracking-tight leading-none",
+      "instruction": "Do not use generic fonts like Inter. Use fluid typography scaling, e.g., text-4xl md:text-6xl for hero headers."
+    },
+    "body": {
+      "family": "Satoshi, sans-serif",
+      "styles": "leading-relaxed text-[#0A0A0A]",
+      "instruction": "Ensure high legibility. Avoid light gray text on white backgrounds."
+    },
+    "monospace": {
+      "family": "JetBrains Mono, monospace",
+      "styles": "text-sm font-medium tracking-tight",
+      "instruction": "Use for code snippets, curriculum module tags, or time indicators."
+    }
+  },
+  "spacing_and_layout": {
+    "container_padding": "p-6 md:p-12",
+    "grid_system": "Bento Grid System",
+    "border_radius": "rounded-xl",
+    "border_width": "border-2",
+    "shadows": {
+      "default": "shadow-[4px_4px_0px_0px_#0A0A0A]",
+      "hover": "shadow-[6px_6px_0px_0px_#0A0A0A]",
+      "active": "shadow-none translate-y-1 translate-x-1"
+    },
+    "instruction": "All bordered containers must have internal padding (e.g., p-6) to prevent text collision. Use asymmetry to create visual tension."
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-[#00A3FF] text-[#0A0A0A] border-2 border-[#0A0A0A] rounded-xl px-6 py-3 font-bold hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_#0A0A0A] active:shadow-none active:translate-y-1 active:translate-x-1 transition-all",
+      "secondary": "bg-[#F9F8F6] text-[#0A0A0A] border-2 border-[#0A0A0A] rounded-xl px-6 py-3 font-bold hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_#0A0A0A] active:shadow-none active:translate-y-1 active:translate-x-1 transition-all",
+      "accent": "bg-[#FFD500] text-[#0A0A0A] border-2 border-[#0A0A0A] rounded-xl px-6 py-3 font-bold hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_#0A0A0A] transition-all"
+    },
+    "cards": {
+      "base": "bg-white border-2 border-[#0A0A0A] rounded-xl p-6 shadow-[4px_4px_0px_0px_#0A0A0A]",
+      "interactive": "hover:-translate-y-1 hover:shadow-[8px_8px_0px_0px_#0A0A0A] transition-all cursor-pointer"
+    },
+    "inputs": {
+      "base": "bg-white border-2 border-[#0A0A0A] rounded-lg px-4 py-3 focus:ring-4 focus:ring-[#FFD500]/50 focus:outline-none placeholder:text-gray-400 font-medium",
+      "instruction": "Use heavily customized Shadcn Input and Select components, enforcing the 2px black border and ring-focus."
+    }
+  },
+  "pages": [
+    {
+      "name": "Smart Registration Wizard",
+      "layout": "Centered constrained column, full viewport height (Typeform style).",
+      "features": [
+        "One question per screen for low cognitive load.",
+        "Progress bar must be a thick, vibrant block element, not a thin native UI line.",
+        "Massive playful typography for the active question."
+      ]
+    },
+    {
+      "name": "Student Learning Dashboard",
+      "layout": "Grid-cols-1 md:grid-cols-12 gap-8 Bento Layout.",
+      "features": [
+        "Welcome Banner: 12-col span. Vibrant primary color background. Shows quick stats.",
+        "Visual Roadmap (CRITICAL): 8-col span. Must not be a standard list. Render it as a winding SVG path or horizontal 'subway map' nodes representing modules/stages. Completed = filled accent color, locked = white background with dashed border.",
+        "Next Session Widget: 4-col span. Highlights upcoming 1-on-1 calls with video link CTA."
+      ]
+    },
+    {
+      "name": "1-on-1 Session Booking",
+      "layout": "Split pane grid (Calendar on left, time slot pills on right).",
+      "features": [
+        "Shadcn Calendar heavily customized. Override default soft styles with hard 2px borders and active dates in #FFD500.",
+        "Time slots as chunky, interactive pill buttons."
+      ]
+    },
+    {
+      "name": "Instructor Hub & Admin Overview",
+      "layout": "Control Room Grid (Dense, functional, md:grid-cols-4 gap-6).",
+      "features": [
+        "High-contrast data tables using Shadcn, stripped of gray/soft borders and replaced with solid black separators.",
+        "Use bright tags/badges for student progress status."
+      ]
+    }
+  ],
+  "media": {
+    "image_urls": [
+      {
+        "url": "https://images.unsplash.com/photo-1581629736732-70315e25b1e9?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2ODl8MHwxfHNlYXJjaHwxfHxkaXZlcnNlJTIwc3R1ZGVudHMlMjBjb2RpbmclMjBsYXB0b3B8ZW58MHx8fHwxNzc4NTk3NjE2fDA&ixlib=rb-4.1.0&q=85",
+        "category": "hero",
+        "description": "Diverse student coding on laptop. Use for the public landing page hero or welcome splash screens."
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1632835298280-ad3d64834ab8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzN8MHwxfHNlYXJjaHwxfHxtZW50b3IlMjB0ZWFjaGluZyUyMGNvZGluZ3xlbnwwfHx8fDE3Nzg1OTc2MTZ8MA&ixlib=rb-4.1.0&q=85",
+        "category": "feature_1_on_1",
+        "description": "Mentors and students collaborating at table. Use for the 1-on-1 mentorship overview or booking section."
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1573495612890-430e48b164df?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2ODl8MHwxfHNlYXJjaHwyfHxkaXZlcnNlJTIwc3R1ZGVudHMlMjBjb2RpbmclMjBsYXB0b3B8ZW58MHx8fHwxNzc4NTk3NjE2fDA&ixlib=rb-4.1.0&q=85",
+        "category": "testimonial_or_student_profile",
+        "description": "Woman using MacBook Pro. Good for placeholder student avatars, success stories, or testimonials."
+      }
+    ],
+    "icons": {
+      "library": "@phosphor-icons/react",
+      "instruction": "Run `yarn add @phosphor-icons/react`. Use 'duotone' weight for a playful, textured tech feel."
+    }
+  },
+  "accessibility_and_testing": {
+    "data_testid": "MANDATORY: All interactive elements (buttons, inputs, links, roadmap nodes) MUST include a data-testid attribute formatted as kebab-case, role-based. e.g., data-testid='enroll-button', data-testid='login-submit-button'.",
+    "contrast": "Ensure pure black (#0A0A0A) is used for all text over the primary yellow and secondary blue backgrounds to meet WCAG AA/AAA standards."
+  },
+  "instructions_to_main_agent": [
+    "You are building for a non-profit, but the UI must feel premium, empowering, and distinctive. AVOID generic Vercel-like soft minimalist SaaS looks.",
+    "Implement the Neo-Brutalist shadow effects defined in spacing_and_layout. This is non-negotiable for the brand aesthetic.",
+    "For the visual curriculum roadmap (CRITICAL), do not use a standard vertical <ul> list. Build an SVG-based timeline or a winding flexbox layout where modules look like stops on a subway map (nodes).",
+    "Use pure HTML + Tailwind for the onboarding/registration areas for maximum creative layout freedom. Use Shadcn for the deep dashboard components, heavily styled with our hard borders.",
+    "Do not use generic SaaS placeholder images. Always use the exact Unsplash URLs provided in media.image_urls.",
+    "Logo should be purely typographic using the Cabinet Grotesk font with tight tracking, e.g. `<span class='font-black tracking-tighter text-2xl'>YesWeCode</span>`."
+  ]
+}
