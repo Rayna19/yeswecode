@@ -1,0 +1,231 @@
+"@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url(\"https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,700,800,900&f[]=satoshi@400,500,700&f[]=jetbrains-mono@400,500&display=swap\");
+
+:root {
+  --yw-bg: #f9f8f6;
+  --yw-surface: #ffffff;
+  --yw-primary: #ffd500;
+  --yw-secondary: #00a3ff;
+  --yw-accent: #ff6b6b;
+  --yw-ink: #0a0a0a;
+  --yw-muted: #52525b;
+}
+
+@layer base {
+  :root {
+    --background: 40 18% 97%;
+    --foreground: 0 0% 4%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 4%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 4%;
+    --primary: 50 100% 50%;
+    --primary-foreground: 0 0% 4%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 4%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 35%;
+    --accent: 0 100% 71%;
+    --accent-foreground: 0 0% 4%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 4%;
+    --input: 0 0% 4%;
+    --ring: 50 100% 50%;
+    --radius: 0.75rem;
+  }
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+html,
+body,
+#root {
+  background: var(--yw-bg);
+  color: var(--yw-ink);
+  font-family: \"Satoshi\", ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-display {
+  font-family: \"Cabinet Grotesk\", ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.font-mono-yw {
+  font-family: \"JetBrains Mono\", ui-monospace, monospace;
+}
+
+/* Neo-brutalist primitives */
+.yw-card {
+  background: #fff;
+  border: 2px solid var(--yw-ink);
+  border-radius: 0.875rem;
+  box-shadow: 4px 4px 0 0 var(--yw-ink);
+}
+
+.yw-card-lg {
+  background: #fff;
+  border: 2px solid var(--yw-ink);
+  border-radius: 1rem;
+  box-shadow: 6px 6px 0 0 var(--yw-ink);
+}
+
+.yw-btn {
+  border: 2px solid var(--yw-ink);
+  border-radius: 0.75rem;
+  padding: 0.65rem 1.1rem;
+  font-weight: 700;
+  font-family: \"Satoshi\", sans-serif;
+  transition:
+    transform 120ms ease,
+    box-shadow 120ms ease,
+    background 120ms ease;
+  box-shadow: 4px 4px 0 0 var(--yw-ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  background: #fff;
+  color: var(--yw-ink);
+}
+.yw-btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 6px 6px 0 0 var(--yw-ink);
+}
+.yw-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0 0 0 0 var(--yw-ink);
+}
+.yw-btn-primary {
+  background: var(--yw-secondary);
+  color: var(--yw-ink);
+}
+.yw-btn-accent {
+  background: var(--yw-primary);
+  color: var(--yw-ink);
+}
+.yw-btn-danger {
+  background: var(--yw-accent);
+  color: var(--yw-ink);
+}
+.yw-btn-ghost {
+  background: transparent;
+  box-shadow: none;
+  border-color: transparent;
+}
+.yw-btn-ghost:hover {
+  box-shadow: none;
+  transform: none;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.yw-input {
+  width: 100%;
+  background: #fff;
+  border: 2px solid var(--yw-ink);
+  border-radius: 0.625rem;
+  padding: 0.7rem 0.9rem;
+  font-weight: 500;
+  font-family: \"Satoshi\", sans-serif;
+  outline: none;
+  color: var(--yw-ink);
+}
+.yw-input:focus {
+  box-shadow: 0 0 0 4px rgba(255, 213, 0, 0.55);
+}
+
+.yw-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  border: 2px solid var(--yw-ink);
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--yw-ink);
+}
+
+.yw-tag-yellow {
+  background: var(--yw-primary);
+}
+.yw-tag-blue {
+  background: var(--yw-secondary);
+  color: var(--yw-ink);
+}
+.yw-tag-red {
+  background: var(--yw-accent);
+  color: var(--yw-ink);
+}
+.yw-tag-ink {
+  background: var(--yw-ink);
+  color: #fff;
+}
+
+.yw-noise {
+  background-image:
+    radial-gradient(rgba(0, 0, 0, 0.06) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+.yw-grid-bg {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Subway-style roadmap node */
+.roadmap-node {
+  width: 64px;
+  height: 64px;
+  border: 3px solid var(--yw-ink);
+  border-radius: 999px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: \"Cabinet Grotesk\", sans-serif;
+  font-weight: 900;
+  font-size: 1.25rem;
+  box-shadow: 4px 4px 0 0 var(--yw-ink);
+  transition: transform 150ms ease;
+}
+.roadmap-node:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 0 var(--yw-ink);
+}
+.roadmap-node.completed {
+  background: var(--yw-secondary);
+}
+.roadmap-node.current {
+  background: var(--yw-primary);
+}
+.roadmap-node.locked {
+  background: #fff;
+  border-style: dashed;
+  opacity: 0.7;
+}
+
+.scroll-hidden::-webkit-scrollbar {
+  display: none;
+}
+.scroll-hidden {
+  scrollbar-width: none;
+}
+
+::selection {
+  background: var(--yw-primary);
+  color: var(--yw-ink);
+}
+"
