@@ -1,0 +1,5 @@
+"/* Component-specfic styles handled in index.css */
+.App {
+  min-height: 100vh;
+}
+"
